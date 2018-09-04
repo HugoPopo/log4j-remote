@@ -1,33 +1,30 @@
-package com.huber.log;
+package com.smile.huber.spark.metrics.log;
 
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.Category;
 import org.apache.log4j.spi.LoggingEvent;
 import org.apache.log4j.spi.ErrorCode;
-import org.apache.log4j.Layout;
-import org.apache.log4j.helpers.LogLog;
 
 import java.util.*;
 import java.io.*;
 import java.net.*;
 
 /** This appender works much like log4j's Socket Appender.
- 14   *  The main difference is that it sends strings to
- 15   *  remote clients rather than sending serialized
- 16   *  LoggingEvent objects. This approach has the
- 17   *  advantages of being considerably faster (serialization
- 18   *  is not cheap) and of not requiring the client
- 19   *  application to be coupled to log4j at all.
- 20   *
- 21   *  <p>This appender takes only one "parameter," which specifies
- 22   *     the port number (defaults to 9999). Set it with:
- 23   *  <PRE>
- 24   *  log4j.appender.R=com.holub.log4j.RemoteAppender;
- 25   *  ...
- 26   *  log4j.appender.R.Port=1234
- 27   *  </PRE>
- 28   *
- 29   */
+ *  The main difference is that it sends strings to
+ *  remote clients rather than sending serialized
+ *  LoggingEvent objects. This approach has the
+ *  advantages of being considerably faster (serialization
+ *  is not cheap) and of not requiring the client
+ *  application to be coupled to log4j at all.
+ *
+ *  <p>This appender takes only one "parameter," which specifies
+ *     the port number (defaults to 9999). Set it with:
+ *  <PRE>
+ *  log4j.appender.R=com.holub.log4j.RemoteAppender;
+ *  ...
+ *  log4j.appender.R.Port=1234
+ *  </PRE>
+ */
 
 public class RemoteAppender extends AppenderSkeleton {
     // The iterator across the "clients" Collection must

@@ -135,7 +135,7 @@ modules.xml
 *.class
 
 # Log file
-*.log
+*.com.smile.huber.spark.metrics.log
 
 # BlueJ files
 *.ctxt
